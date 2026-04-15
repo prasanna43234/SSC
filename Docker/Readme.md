@@ -1,39 +1,163 @@
-Docker Commands
-1. Download images from dockerhub
-   docker pull imagename         --> Pulls Latest (Default tag)
-   docker pull imagename:version  --> Particular version will be downloaded
-2.Docker Image commands
-  docker images ---->It lists all local docker images
-  docker rmi imagename --->Removes Image
-3.Docker build commands for custom image
-  (i) If Dockerfile is in same location
-      docker build -t imagename . ----> Image creates with the latest tag
-      docker build -t my-app:v1.0 .   --->Image creates with the v1.0 tag
- (ii) If Dockerfile is in differnt lcoation
-      docker build -f app/Dockerfile -t my-app:latest .
-      docker build -f app/Dockerfile -t my-app:v1.0 .
-4.Running docker containers
-   (i) To run in detached mode .Means containers runs in background
-       docker run -d imagename
-   (ii) To run container in interactive mode .Means terminal access of container
-       docker run -it imagename /bin/bash
-   (iii) To run with name of our choice for contianer .
-        docker run -d --name my-container imagename
-   (iv) To run with port mapping
-        docker run -d -p 8080:80 imagename
-    (v) To run with environment variables
-        docker run -d -e ENV=dev imagename
-   (vi) To remvoe container
-        docker rm contianerid
-        
-5. Container Monitoring
-    docker ps ---> To list all running container
-    docker ps -a ---> To list all containers
-    docker ps -a | grep "reverse"  --> shows reverse proxy container 
-6.  Container Life cycle commands
-    docker start containerid    ---> To start docker container
-    docker stop containerid     ---> To stop docker container
-    docker restart containerid  ---> To restart docker container
-7.Docker log commands
-   docker l
-   
+# 🐳 Docker Commands
+
+## 1. Download Images from Docker Hub
+
+```
+docker pull imagename
+```
+
+➡️ Pulls latest image (default tag)
+
+```
+docker pull imagename:version
+```
+
+➡️ Pulls specific version
+
+---
+
+## 2. Docker Image Commands
+
+```
+docker images
+```
+
+➡️ Lists all local Docker images
+
+```
+docker rmi imagename
+```
+
+➡️ Removes image
+
+---
+
+## 3. Docker Build Commands (Custom Image)
+
+### (i) If Dockerfile is in same location
+
+```
+docker build -t imagename .
+```
+
+➡️ Creates image with latest tag
+
+```
+docker build -t my-app:v1.0 .
+```
+
+➡️ Creates image with v1.0 tag
+
+### (ii) If Dockerfile is in different location
+
+```
+docker build -f app/Dockerfile -t my-app:latest .
+docker build -f app/Dockerfile -t my-app:v1.0 .
+```
+
+---
+
+## 4. Running Docker Containers
+
+### (i) Detached mode (background)
+
+```
+docker run -d imagename
+```
+
+### (ii) Interactive mode (terminal access)
+
+```
+docker run -it imagename /bin/bash
+```
+
+### (iii) Run with custom name
+
+```
+docker run -d --name my-container imagename
+```
+
+### (iv) Port mapping
+
+```
+docker run -d -p 8080:80 imagename
+```
+
+### (v) Environment variables
+
+```
+docker run -d -e ENV=dev imagename
+```
+
+### (vi) Remove container
+
+```
+docker rm containerid
+```
+
+---
+
+## 5. Container Monitoring
+
+```
+docker ps
+```
+
+➡️ Lists running containers
+
+```
+docker ps -a
+```
+
+➡️ Lists all containers
+
+```
+docker ps -a | grep "reverse"
+```
+
+➡️ Filter containers
+
+---
+
+## 6. Container Lifecycle Commands
+
+```
+docker start containerid
+docker stop containerid
+docker restart containerid
+```
+
+---
+
+## 7. Docker Log Commands
+
+```
+docker logs containerid
+```
+
+➡️ View logs
+
+```
+docker logs -f containerid
+```
+
+➡️ Live logs
+
+```
+docker logs --tail 100 containerid
+```
+
+➡️ Last 100 lines
+
+---
+
+✅ **Now this is perfect for README.md** (clean, professional, no errors)
+
+---
+
+If you want, I can also:
+
+* 🔥 Add **real-time examples (Nginx, Java app)**
+* 📄 Convert into **GitHub project README (with headings + badges)**
+
+Just tell 👍
