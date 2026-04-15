@@ -130,34 +130,43 @@ docker restart containerid
 ---
 
 ## 7. Docker Log Commands
+## 📄 **View All Logs**
 
-```
-docker logs containerid
-```
-
-➡️ View logs
-
-```
-docker logs -f containerid
+```bash
+docker logs <containerid>
 ```
 
-➡️ Live logs
-
-```
-docker logs --tail 100 containerid
-```
-
-➡️ Last 100 lines
+➡️ Shows complete logs of container
 
 ---
 
-✅ **Now this is perfect for README.md** (clean, professional, no errors)
+## 📡 **Live Logs (Real-Time)**
+
+```bash
+docker logs -f <containerid>
+```
+
+➡️ Continuously shows logs as they are generated
 
 ---
 
-If you want, I can also:
+## 🔢 **Last Few Lines**
 
-* 🔥 Add **real-time examples (Nginx, Java app)**
-* 📄 Convert into **GitHub project README (with headings + badges)**
+```bash
+docker logs --tail 100 <containerid>
+```
 
-Just tell 👍
+➡️ Shows only last 100 lines
+
+---
+
+## ⏱️ **Logs with Timestamp**
+
+```bash
+docker logs -t <containerid>
+```
+
+➡️ Shows logs with time
+
+---
+
