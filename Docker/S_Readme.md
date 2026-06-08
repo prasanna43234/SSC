@@ -7,13 +7,13 @@ Docker file  --> Build --> Docker image --> run --->Docker container
 Docker architecure
 
 Container shared Host os
-App1 App2 App3 
-Docker Engine
-Host OS
+\nApp1 App2 App3 
+\nDocker Engine
+\nHost OS
 Host Hardware
 
 VM Ware
- 
+ App1 App2 App3
 Guest Os(VM1) VM2 VM3 
 Hyperviser
 Host OS 
