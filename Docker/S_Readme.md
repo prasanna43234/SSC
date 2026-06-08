@@ -12,9 +12,11 @@ Docker Engine
 Host OS  
 Host Hardware  
 
-VM Ware
- App1 App2 App3
-Guest Os(VM1) VM2 VM3 
-Hyperviser
-Host OS 
-Host Hardware
+VM Ware  
+
+VM1      VM2      VM3   
+App1     App2      App3  
+Guest Os Guest Os  Guest Os    
+Hyperviser(vmware)  
+Host OS   
+Host Hardware  
