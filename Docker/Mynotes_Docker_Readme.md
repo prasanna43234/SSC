@@ -35,6 +35,14 @@ docker -exec -it containername /bin/bash ---> To access container shell
 docker run -dit --name containername imagename --->To run container in detached mode  
 docker cp containername:/opt/app/ . -->copyinng docker container data to the local server  
 
+Sample Dockerfile for java application  
+
+FROM openjdk:17-jdk-slim   
+WORKDIR /opt/app  
+COPY target/my-app.jar app.jar  
+EXPOSE 8080  
+ENTRYPOINT ["java","-jar","app.jar"]
+
 
 
 
