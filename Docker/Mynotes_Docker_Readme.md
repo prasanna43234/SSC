@@ -4,7 +4,7 @@ Docker is a containerization platform that allows us to build,package and run ap
 
 Docker file  --> Build --> Docker image --> run --->Docker container
 
-Docker architecure
+**Docker architecure**  
 
 Container shared Host os  
 App1 App2 App3   
@@ -12,7 +12,7 @@ Docker Engine
 Host OS  
 Host Hardware  
 
-VM Ware  
+**VM Ware**    
 
 VM1      VM2      VM3   
 App1     App2      App3  
@@ -21,7 +21,7 @@ Hyperviser(vmware)
 Host OS   
 Host Hardware  
 
-Docker Commands:    
+**Docker Commands:**     
 docker build -t imagename .--->Docker image will be build using docker file with the mentioned name,if docker file is in same locaiton    
 docker build -t imagename:v1 . --->Docker image will be build using docker file with the tag and mentioned name    
 docker build -f app/Dockerfile -t imagename -->Docker image will be build using docker file with the mentioned name,if docker file is in different locaiton  
@@ -35,13 +35,53 @@ docker -exec -it containername /bin/bash ---> To access container shell
 docker run -dit --name containername imagename --->To run container in detached mode  
 docker cp containername:/opt/app/ . -->copyinng docker container data to the local server  
 
-Sample Dockerfile for java application  
+**Sample Dockerfile for java application (Ubuntu /Debian OS)**  
 
 FROM openjdk:17-jdk-slim   
 WORKDIR /opt/app  
+RUN apt-get update && \   
+    apt-get install -y vim curl net-tools && \    
+    apt-get clean && \  
+    rm -rf /var/lib/apt/lists/*
+    
 COPY target/my-app.jar app.jar  
 EXPOSE 8080  
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]  
+
+**Sample Dockerfile for Alpine image**
+FROM Openjdk:17-jdk-alpine  
+WORKDIR /opt/app  
+RUN apk update && \  
+    apk add --no-cache vim curl net-tools bash   
+COPY target/my-app.jar app.jar  
+EXPOSE 8080  
+ENTRYPOINT ["java","-jar","app.jar"]  
+
+**Sample java Dockerfile for Centos OR RHEL base**    
+
+FROM openjdk:17  
+WORKDIR /opt/app  
+RUN yum update -y && \  
+    yum install -y vim curl net-tools && \  
+    yum clean all  
+COPY target/my-app.jar app.jar  
+EXPOSE 8080  
+ENTRYPOINT ["java","-jar","app.java"]  
+
+**Sample Dockerfile for python based application **  
+
+
+
+
+**Note** : 
+apt-get clean # We download setup files for installation ,those will be removed after clean    
+rm -rf /var/lib/apt/lists/* # index files will be deleted  
+Use Alpine and slim are docker lightweight images .These are small size and helps in faster deployments.   
+Update : Downloads the latest list of available package in the website and it doesnt change anything .  
+apt-get curl -y # intalls latest available version through the link in the index.   
+--no-cache # installs packages without storing cache  
+upgrade # is usually avoided unless its required .Prefer stable base image instead  
+    
 
 
 
