@@ -68,7 +68,14 @@ COPY target/my-app.jar app.jar
 EXPOSE 8080  
 ENTRYPOINT ["java","-jar","app.java"]  
 
-**Sample Dockerfile for python based application **  
+**Sample Dockerfile for python based application**  
+FROM python:3.11-slim  
+WORKDIR /opt/app  
+COPY requirements.txt .  
+RUN pip install --no-cache-dir -r requirements.txt  
+COPY my-app.py app.py  
+EXPOSE 5000  
+ENTRYPOINT ["python","app.py"]
 
 
 
@@ -80,6 +87,9 @@ Use Alpine and slim are docker lightweight images .These are small size and help
 Update : Downloads the latest list of available package in the website and it doesnt change anything .  
 apt-get curl -y # intalls latest available version through the link in the index.   
 --no-cache # installs packages without storing cache  
+CMD ["python",'app.py'] # It can be changed during execution  
+Ex. docker run image python test.py can be override easily  
+ENTRYPOINT is fixed 
 upgrade # is usually avoided unless its required .Prefer stable base image instead  
     
 
