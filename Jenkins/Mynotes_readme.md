@@ -21,26 +21,26 @@ no human errors
 Detects errors early through automated testing  
 speed up release process  
 **Jenkins Installation Steps (Ubuntu or Debian)**  
-1. Update system
-   sudo apt update
-2. Install java  
-   sudo apt install openjdk-17-jdk -y
-   java -version
-3. Add jennkins key
-   curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null  
-4. Add jenkins repository
-   echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
-5.Install Jenkins
-  sudo apt update
-  sudo apt install jenkins -y
-6.Start jenkins
-  sudo systemctl start jenkins
-7.Enable Jenkins
-  sudo systemctl enble jenkins
-8.Check status of jenkins
-  sudo systemctl status jenkins
-9.Get Admin password
-  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
-10.Access Jenkins
-   http://<your-server-ip>:8080
+1. Update system  
+   sudo apt update  
+2. Install java    
+   sudo apt install openjdk-17-jdk -y  
+   java -version  
+3. Add jennkins key  
+   curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null    
+4. Add jenkins repository  
+   echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null  
+5.Install Jenkins  
+  sudo apt update  
+  sudo apt install jenkins -y  
+6.Start jenkins  
+  sudo systemctl start jenkins  
+7.Enable Jenkins  
+  sudo systemctl enble jenkins  
+8.Check status of jenkins  
+  sudo systemctl status jenkins  
+9.Get Admin password  
+  sudo cat /var/lib/jenkins/secrets/initialAdminPassword  
+10.Access Jenkins  
+   http://<your-server-ip>:8080  
 
