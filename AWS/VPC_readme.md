@@ -1,28 +1,32 @@
 SSS  
 VPC is Virtual Private Cloud  
+
 **VPC creation steps :**  
+
 **1.Creat VPC**  
-- Go to AWS Console --> Search for VPC
-- Click Creat VPC
+Go to AWS Console --> Search for VPC  
+Click Creat VPC    
 - **Name** : my-vpc  
 - **IPV4 CIDR** : 10.0.0.0/16
-- Click create VPC  
-**2.Create IGW**
-- Go to Internet Gateways
-- Click Internet Gateways
-- Name : my-igw
+Click create VPC
+  
+**2.Create IGW**  
+Go to Internet Gateways  
+Click Internet Gateways  
+- **Name :** my-igw
 - Click create IGW
-- Select IGW --> Click Attach to vpc
-- Choose VPC   
-**3.Create Subnets** 
-- Go to subnets  --> click on create subnet
-  **Public Subnet**    
-- Name : my-public-subnet
-- IPV4 CIDR : 10.0.0.0/24
-- Availability Zone : ap-south-1a   
-  **Private Subnet**  
-- Name : my-private-subnet
-- IPV4 CIDR : 10.0.1.0/24
+- Select IGW --> Click Attach to vpc  
+- Choose VPC
+     
+**3.Create Subnets**   
+Go to subnets  --> click on create subnet  
+  **Public Subnet**      
+- Name : my-public-subnet  
+- IPV4 CIDR : 10.0.0.0/24  
+- Availability Zone : ap-south-1a     
+  **Private Subnet**    
+- Name : my-private-subnet  
+- IPV4 CIDR : 10.0.1.0/24  
 - Availability Zone : ap-south-1b  
 **4.Enable Auto Assign Public IP**  
 - Go to subnets
