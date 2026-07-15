@@ -20,24 +20,26 @@ Click Internet Gateways
      
 **3.Create Subnets**   
 Go to subnets  --> click on create subnet  
-  **Public Subnet**      
-- Name : my-public-subnet  
-- IPV4 CIDR : 10.0.0.0/24  
-- Availability Zone : ap-south-1a     
-  **Private Subnet**    
-- Name : my-private-subnet  
-- IPV4 CIDR : 10.0.1.0/24  
-- Availability Zone : ap-south-1b  
+**Public Subnet**        
+- **Name** : my-public-subnet  
+- **IPV4 CIDR** : 10.0.0.0/24  
+- **Availability Zone** : ap-south-1a     
+**Private Subnet**    
+- **Name** : my-private-subnet  
+- **IPV4 CIDR** : 10.0.1.0/24  
+- **Availability Zone** : ap-south-1b
+    
 **4.Enable Auto Assign Public IP**  
-- Go to subnets
+Go to subnets
 - Select my-public-subnet
 - Edit subnet settings
 - Enable:
-  auto assign public ipv4 address  
+  auto assign public ipv4 address
+    
 **5.Create Route Tables**  
   - Go to Route tables
-  - Click on create Route table  
-  **Public Route table**  
+  - Click on create Route table
+**Public Route table**  
   - **Name** : Public-RT
   - **Add Route:**
   - **Destination:** 0.0.0.0/0
@@ -45,7 +47,8 @@ Go to subnets  --> click on create subnet
   - Click on create Route table  
   **Private Route table** 
   - **Name :** Private-RT
-  - **Rules :** No rules to add    
+  - **Rules :** No rules to add
+
 **6.Subnet Association**  
   - Go to Route tables  
   **Click Public-RT**  
